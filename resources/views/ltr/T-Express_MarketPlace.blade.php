@@ -204,143 +204,21 @@
   
 <!-- End Slideshow -->
 
- <!--Start Card-->      
-  <!-- Grid row -->
+ 
 <div style="margin: 35px 35px 35px 35px;">
   <div class="row">
-  
-    <!-- Grid column -->
+  @foreach($markets as $row)
     <div class="column mb-4 px-2">
-  
-      <!--Card Primary-->
       <div class="text-center z-depth-2">
         <a href="T-Express_Categories">
         <div class="card-body">
-          <img style="max-width:200px;max-height:200px;" src="img/carff.png"alt="1">
+          <h1 style="height:200px;"> {{$row['market_name']}}</h1>
         </div></a>
       </div>
-      <!--/.Card Primary-->
-  
+     </div>
+  @endforeach
     </div>
-    <!-- Grid column -->
-  
-    <!-- Grid column -->
-    <div class="column mb-4 px-2">
-  
-      <!--Card Primary-->
-      <div class="text-center z-depth-2">
-        <a href="T-Express_Categories">
-        <div class="card-body">
-          <img style="max-width:200px;max-height:200px;" src="img/fath.jpg"alt="1">
-        </div></a>
-      </div>
-      <!--/.Card Primary-->
-  
-    </div>
-    <!-- Grid column -->
-  
-    <!-- Grid column -->
-    <div class="column mb-4 px-2">
-  
-      <!--Card Primary-->
-      <div class="text-center z-depth-2">
-        <a href="T-Express_Categories">
-        <div class="card-body">
-          <img style="max-width:200px;max-height:200px;" src="img/zah.png"alt="1">
-        </div></a>
-      </div>
-      <!--/.Card Primary-->
-  
-    </div>
-    <!-- Grid column -->
-  
-    <!-- Grid column -->
-    <div class="column mb-4 px-2">
-  
-      <!--Card Primary-->
-      <div class="text-center z-depth-2">
-        <a href="T-Express_Categories">
-        <div class="card-body">
-          <img style="max-width:200px;max-height:200px;" src="img/met.png"alt="1">
-        </div></a>
-      </div>
-      <!--/.Card Primary-->
-  
-    </div>
-    <!-- Grid column -->
-  
   </div>
-  <!-- Grid row -->
-   <!-- Grid row -->
-   <div class="row">
-  
-    <!-- Grid column -->
-    <div class="column mb-4 px-2">
-  
-      <!--Card Primary-->
-      <div class="text-center z-depth-2">
-        <a href="T-Express_Categories">
-        <div class="card-body">
-          <img style="max-width:200px;max-height:200px;" src="img/sak.jpg"alt="1">
-        </div></a>
-      </div>
-      <!--/.Card Primary-->
-  
-    </div>
-    <!-- Grid column -->
-  
-    <!-- Grid column -->
-    <div class="column mb-4 px-2">
-  
-      <!--Card Primary-->
-      <div class="text-center z-depth-2">
-        <a href="T-Express_Categories">
-        <div class="card-body">
-          <img style="max-width:200px;max-height:200px;" src="img/rs.jpg"alt="1">
-        </div></a>
-      </div>
-      <!--/.Card Primary-->
-  
-    </div>
-    <!-- Grid column -->
-  
-    <!-- Grid column -->
-    <div class="column mb-4 px-2">
-  
-      <!--Card Primary-->
-      <div class="text-center z-depth-2">
-        <a href="T-Express_Categories">
-        <div class="card-body">
-          <img style="max-width:200px;max-height:200px;" src="img/ker.jpg"alt="1">
-        </div></a>
-      </div>
-      <!--/.Card Primary-->
-  
-    </div>
-    <!-- Grid column -->
-  
-    <!-- Grid column -->
-    <div class="column mb-4 px-2">
-  
-      <!--Card Primary-->
-      <div class="text-center z-depth-2">
-        <a href="T-Express_Categories">
-        <div class="card-body">
-          <img style="max-width:200px;max-height:200px;" src="img/kaz.jpg"alt="1">
-        </div></a>
-      </div>
-      <!--/.Card Primary-->
-  
-    </div>
-    <!-- Grid column -->
-  
-  </div>
-  </div>
-  <!-- Grid row -->
-  <!-- End Card -->
-<!-- End body -->
-        
-
 <!--Start Footer-->
               <footer
               style="bottom: 0;width:100%;"

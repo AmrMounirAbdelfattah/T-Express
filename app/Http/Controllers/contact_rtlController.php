@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Contact;
 class contact_rtlController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +54,7 @@ class contact_rtlController extends Controller
             'contact_message'  =>  $request->get('message')
         ]);
         $contact->save();
-        return view('rtl.T-Express_MarketPlace_RTL');
+        return redirect()->route('rtl.T-Express_ContactUs_RTL')->with('success', 'Data Added');
     }
 
     /**

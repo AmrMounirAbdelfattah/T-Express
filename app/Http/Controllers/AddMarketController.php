@@ -3,16 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Contact;
-
-class ContactController extends Controller
+use App\AddMarket;
+class AddMarketController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +23,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('ltr.T-Express_ContactUs');
+        return view('Admin.Add_Market');
     }
 
     /**
@@ -41,23 +34,19 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());//
         $this->validate($request, [
-            'name'     =>  'required',
-            'email'    =>  'required',
-            'image'    =>  'required',
-            'subject'  =>  'required',
-            'message'  =>  'required'
+            'marketname'     =>  'required',
+            'marketimage'    =>  'required',
+            'marketlocation' =>  'required'
+            
         ]);
-        $contact = new Contact([
-            'contact_name'     =>  $request->get('name'),
-            'contact_email'    =>  $request->get('email'),
-            'contact_image'    =>  $request->get('image'),
-            'contact_subject'  =>  $request->get('subject'),
-            'contact_message'  =>  $request->get('message')
-        ]);
-        $contact->save();
-        return redirect()->route('ltr.T-Express_ContactUs')->with('success', 'Data Added');
+        $addMarket = new AddMarket([
+            'market_name'       =>  $request->get('marketname'),
+            'market_image'      =>  $request->get('marketimage'),
+            'market_location'   =>  $request->get('marketlocation')
+            ]);
+        $addMarket->save();
+        return redirect()->route('Admin.Add_Market')->with('success', 'Data Added'); 
     }
 
     /**

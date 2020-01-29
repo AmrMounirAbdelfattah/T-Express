@@ -54,14 +54,12 @@ Route::get('/T-Express_SubCategories', function () {
 Route::get('/T-Express_Categories', function () {
     return view('ltr/T-Express_Categories');
 });
+
 Route::get('/T-Express_AccountSettings_RTL', function () {
     return view('rtl/T-Express_AccountSettings_RTL');
 });
 Route::get('/T-Express_Cart_RTL', function () {
     return view('rtl/T-Express_Cart_RTL');
-});
-Route::get('/T-Express_ContactUs_RTL', function () {
-    return view('rtl/T-Express_ContactUs_RTL');
 });
 Route::get('/T-Express_ForgotPassword_RTL', function () {
     return view('rtl/T-Express_ForgotPassword_RTL');
@@ -96,6 +94,8 @@ Route::get('/T-Express_SubCategories_RTL', function () {
 Route::get('/T-Express_Categories_RTL', function () {
     return view('rtl/T-Express_Categories_RTL');
 });
+
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
@@ -108,7 +108,21 @@ Route::get('login/google', 'Auth\LoginController@redirectToProvider');
 
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/T-Express_ContactUs', 'ContactController@create');
+Route::get('/T-Express_ContactUs', 'ContactController@create')->name('ltr.T-Express_ContactUs');;
 Route::post('/T-Express_ContactUs', 'ContactController@store');
-Route::get('/T-Express_ContactUs_RTL', 'contact_rtlController@create');
-Route::post('/T-Express_ContactUs_RTL', 'contact_rtlController@store');
+Route::get('/T-Express_ContactUs_RTL', 'Contact_rtlController@create')->name('rtl.T-Express_ContactUs_RTL');
+Route::post('/T-Express_ContactUs_RTL', 'Contact_rtlController@store');
+
+Route::get('/Add_Market', 'AddMarketController@create')->name('Admin.Add_Market');
+Route::post('/Add_Market', 'AddMarketController@store');
+
+Route::get('/Add_Categorie', 'AddCategorieController@create')->name('Admin.Add_Categorie');
+Route::post('/Add_Categorie', 'AddCategorieController@store');
+
+Route::get('/Add_SubCategorie', 'AddSubCategorieController@create')->name('Admin.Add_SubCategorie');
+Route::post('/Add_SubCategorie', 'AddSubCategorieController@store');
+
+Route::get('/Add_Product', 'AddProductController@create')->name('Admin.Add_Product');
+Route::post('/Add_Product', 'AddProductController@store');
+
+
